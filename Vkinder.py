@@ -33,30 +33,6 @@ keyboard_next_again.add_button('Задать другие параметры д�
 keyboard_next_again.add_line()
 keyboard_next_again.add_button('Выход', color=VkKeyboardColor.PRIMARY)
 
-
-def write_msg(user_id, message):
-    vk.method('messages.send', {'user_id': user_id, 'message': message, 'random_id': randrange(10 ** 7)})
-
-
-def write_msg_2_button(user_id, message):
-    vk.method('messages.send', {'user_id': user_id, 'message': message, 'random_id': randrange(10 ** 7),
-                                'keyboard': keyboard_2_button.get_keyboard()})
-
-def write_msg_id(user_id, message):
-    vk.method('messages.send', {'user_id': user_id, 'message': message, 'random_id': randrange(10 ** 7),
-                                'keyboard': keyboard_id.get_keyboard()})
-
-def write_msg_find(user_id, message):
-    vk.method('messages.send', {'user_id': user_id, 'message': message, 'random_id': randrange(10 ** 7),
-                                'keyboard': keyboard_find.get_keyboard()})
-
-
-def write_msg_main(user_id, list_c):
-    for i in list_c[1]:
-        vk.method('messages.send', {'user_id': user_id, 'attachment': i,
-                                    'random_id': randrange(10 ** 7), 'keyboard': keyboard_next_again.get_keyboard()})
-
-
 def start():
     """Функция описывает логику поведения чат-бота при общение с пользователем"""
     temp_count = {}
