@@ -40,8 +40,8 @@ def start():
                 count_tmp += 1
                 continue
             if request == "Старт":
-                write_msg(event.user_id, f"Привет, {event.user_id}. Сейчас найдем пару! Введите токен. "
-                                         f"Токен можно получить тут https://vk.com/dev/access_token")
+                write_msg(event.user_id, f"Привет, {event.user_id}. Сейчас найдем пару!"
+                                       
                 temp_count[event.user_id] = 0
                 continue
             if temp_count[event.user_id] == 0:
