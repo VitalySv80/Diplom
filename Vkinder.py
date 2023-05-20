@@ -8,30 +8,22 @@ from vk_function import VkInfo
 vk = vk_api.VkApi(token=group_token)
 longpoll = VkLongPoll(vk)
 
-"""Описываем параметры для клавиатуры которая будет использоваться в чат-боте для общения с пользователем"""
-keyboard_2_button = VkKeyboard(one_time=True)
-keyboard_next_again = VkKeyboard(one_time=False)
-keyboard_next_2 = VkKeyboard(one_time=True)
-keyboard_find = VkKeyboard(one_time=True)
-keyboard_start = VkKeyboard(one_time=True)
-keyboard_hand = VkKeyboard(one_time=True)
-keyboard_hand_and_id = VkKeyboard(one_time=True)
-keyboard_id = VkKeyboard(one_time=True)
+@staticmethod
+    def current_keyboard():
+        """
+        Creates a keyboard to interact with the chatbot.
+        :return Keyboard JSON-object
+        """
+        keyboard = VkKeyboard(one_time=False)
+        keyboard.add_button('Show', color=VkKeyboardColor.PRIMARY)
+        keyboard.add_line()
+        keyboard.add_button('Add to favorites', color=VkKeyboardColor.POSITIVE)
+        keyboard.add_button('No, thank you', color=VkKeyboardColor.NEGATIVE)
+        keyboard.add_line()
+        keyboard.add_button('Favorites list', color=VkKeyboardColor.SECONDARY)
+        keyboard.add_button('Black list', color=VkKeyboardColor.SECONDARY)
+        return keyboard.get_keyboard()
 
-
-keyboard_start.add_button('Старт', color=VkKeyboardColor.PRIMARY)
-keyboard_2_button.add_button('Ввести фамилию и имя', color=VkKeyboardColor.PRIMARY)
-keyboard_2_button.add_line()
-keyboard_2_button.add_button('Ввести ID пользователя', color=VkKeyboardColor.PRIMARY)
-keyboard_next_2.add_button('Далее', color=VkKeyboardColor.PRIMARY)
-keyboard_id.add_button('Ввести ID пользователя', color=VkKeyboardColor.PRIMARY)
-keyboard_hand.add_button('Задать параметры вручную', color=VkKeyboardColor.PRIMARY)
-keyboard_find.add_button('Начать поиск', color=VkKeyboardColor.PRIMARY)
-keyboard_next_again.add_button('Следующий', color=VkKeyboardColor.PRIMARY)
-keyboard_next_again.add_line()
-keyboard_next_again.add_button('Задать другие параметры для поиска', color=VkKeyboardColor.PRIMARY)
-keyboard_next_again.add_line()
-keyboard_next_again.add_button('Выход', color=VkKeyboardColor.PRIMARY)
 
 def start():
     """Функция описывает логику поведения чат-бота при общение с пользователем"""
