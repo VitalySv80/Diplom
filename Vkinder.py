@@ -4,7 +4,6 @@ from vk_api.longpoll import VkLongPoll, VkEventType
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 from config import group_token
 from vk_function import VkInfo
-from basic_logick import find_candidate, get_age, get_list_parametrs
 
 vk = vk_api.VkApi(token=group_token)
 longpoll = VkLongPoll(vk)
