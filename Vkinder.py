@@ -39,30 +39,13 @@ def write_msg(user_id, message):
     vk.method('messages.send', {'user_id': user_id, 'message': message, 'random_id': randrange(10 ** 7)})
 
 
-def write_msg_start(user_id, message):
-    vk.method('messages.send', {'user_id': user_id, 'message': message, 'random_id': randrange(10 ** 7),
-                                'keyboard': keyboard_start.get_keyboard()})
-
-
 def write_msg_2_button(user_id, message):
     vk.method('messages.send', {'user_id': user_id, 'message': message, 'random_id': randrange(10 ** 7),
                                 'keyboard': keyboard_2_button.get_keyboard()})
 
-
-def write_msg_next_2(user_id, message):
-    vk.method('messages.send', {'user_id': user_id, 'message': message, 'random_id': randrange(10 ** 7),
-                                'keyboard': keyboard_next_again.get_keyboard()})
-
-
 def write_msg_id(user_id, message):
     vk.method('messages.send', {'user_id': user_id, 'message': message, 'random_id': randrange(10 ** 7),
                                 'keyboard': keyboard_id.get_keyboard()})
-
-
-def write_msg_hand(user_id, message):
-    vk.method('messages.send', {'user_id': user_id, 'message': message, 'random_id': randrange(10 ** 7),
-                                'keyboard': keyboard_hand.get_keyboard()})
-
 
 def write_msg_find(user_id, message):
     vk.method('messages.send', {'user_id': user_id, 'message': message, 'random_id': randrange(10 ** 7),
