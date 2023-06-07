@@ -5,14 +5,14 @@ class VkInfo:
     url = 'https://api.vk.com/method/'
     VERSION = '5.131'
 
-    def __init__(self, token):
+def __init__(self, token):
         self.token = token
         self.version = self.VERSION
         self.params = {'access_token': self.token,
                        'v': self.version
                        }
 
-    def check_token(self, id=1):
+ def check_token(self, id=1):
         check_url = self.url + 'users.get'
         user_params = {'user_ids': id}
         response = requests.get(check_url, params={**self.params, **user_params})
@@ -22,7 +22,7 @@ class VkInfo:
         else:
             return id
 
-    def get_user_info(self, id_vk):
+ def get_user_info(self, id_vk):
         """Получаем информацию о пользователе и возвращаем значения пола, города и возраста.
             Если какого-то значения нет возвращается ошибка"""
         user_url = self.url + 'users.get'
