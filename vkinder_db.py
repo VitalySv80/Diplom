@@ -1,6 +1,4 @@
-import sqlalchemy
-import config
-
+import psycopg2
 
 class Vkinderdb:
     user_name = config.vkinder_db_user
